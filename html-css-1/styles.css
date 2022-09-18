@@ -1,0 +1,95 @@
+body {
+    background:#daedf2;
+    margin: 0;
+    padding: 0;
+}
+
+.googleMapsLink {
+    margin: 10px;
+}
+
+.googleMapsLink a {
+    color: #1e420a;
+    font-size: 1em;
+    font-family: "Noto Serif Georgian";
+    font-weight: 500;
+}
+
+header {
+    margin: 100px auto;
+}
+header .heading {
+    text-align: center;
+}
+
+header p {
+    color: #5b8147;
+    font-size: 2em;
+    font-family: "Noto Serif Georgian";
+    font-weight: 200;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+nav {
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 15px
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+ul li a{
+    color: #1e420a;
+    font-size: 1.5em;
+    font-family: "Noto Serif Georgian";
+    font-weight: 500;
+    text-decoration: none;
+}
+
+h1 {
+    color: #1e420a;
+    font-size: 5em;
+    font-family: "Noto Serif Georgian";
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+.activity h2{
+    color: #1e420a;
+    font-size: 3em;
+    font-family: "Noto Serif Georgian";
+    font-weight: 300;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.activity p{
+    color: #5b8147;
+    font-size: 1.5em;
+    font-family: "Noto Serif Georgian";
+    font-weight: 200;
+    width: 90%;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.imageContainer img {
+    width: 500px;
+    height: auto;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 48px;
+}
