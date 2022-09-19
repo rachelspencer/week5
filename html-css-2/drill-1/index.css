@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+}
+ 
+.header {
+    background: #444444;
+    height: 145px;
+}
+.body {
+    height: calc(100vh - 145px);
+    width: 100%;
+    display: flex;
+}
+
+.leftColumn {
+    background: #d8d8d8;
+    width: 16%;
+    height: 100%;
+}
+
+.centreColumn {
+    width: 68%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contentSection {
+    background: #efefef;
+    width: 100%;
+    height: 90%;
+}
+
+.footer  {
+    background: #222222;
+    height: 10%;
+    width: 100%;
+}
+
+.rightColumn {
+    background: #d8d8d8;
+    width: 16%;
+    /* height: 100% */
+}
