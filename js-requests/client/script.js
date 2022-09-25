@@ -10,7 +10,8 @@
 */
 
 // CODE HERE
-
+const sayHelloButton = document.querySelector('#say-hello-button');
+//console.log(sayHelloButton)
 
 // PROBLEM 2
 /*
@@ -21,6 +22,23 @@
 
 // CODE HERE
 
+const baseURL = 'http://localhost:3000';
+const helloBackground = document.querySelector('#say-hello-button');
+const helloTextColor = document.querySelector('#say-hello-button');
+const sayHelloBtn = document.querySelector('#say-hello-button')
+
+function changeHelloBtnBg(color) {
+    helloBackground.style.backgroundColor = color;
+}
+
+function changeHelloBtnTextColor(textColor) {
+    helloTextColor.style.color = textColor;
+}
+
+sayHelloBtn.addEventListener('mouseover', () => {
+    changeHelloBtnBg('black')
+    changeHelloBtnTextColor('white')
+});
 
 // PROBLEM 3
 /*
@@ -32,7 +50,12 @@
 */
 
 // CODE HERE
+function helloBtnDefaultStyle () {
+    helloBackground.style.backgroundColor = '#EFEFEF';
+    helloTextColor.style.color = 'black';
+};
 
+sayHelloBtn.addEventListener('mouseout', helloBtnDefaultStyle)
 
 // PROBLEM 4
 /*
@@ -50,6 +73,9 @@ const sayHello = () => {
         helloText.textContent = res.data;
     })
 }
+
+sayHelloBtn.addEventListener('click', sayHello)
+
 // DO NOT EDIT FUNCTION
 
 // CODE HERE
@@ -66,11 +92,17 @@ const sayHello = () => {
     Handle the promise that's returned with a .then, which you should pass a callback function to. Inside the callback function, console.log the response's data (in the intermediate instructions we'll come back to this function and add HTML).
 */ 
 
-const ohMy = () => {
-    // YOUR CODE HERE
-}
+// const ohMy = () => {
 
-document.getElementById('animals-button').addEventListener('click', ohMy)
+//     axios
+//     .get(baseURL + '/animals')
+//     .then(res => {
+//         console.log(res.data)
+//     })
+//     .catch(err => console.log(err));
+// }
+// ohMy();
+// document.getElementById('animals-button').addEventListener('click', ohMy)
 
 
 // PROBLEM 6 
@@ -85,10 +117,22 @@ document.getElementById('animals-button').addEventListener('click', ohMy)
     
     We'll be updating this function in the next problem.
 */
+const repeatBtn = document.querySelector('#repeat-button');
 
 const repeatMyParam = () => {
     //YOUR CODE HERE
+    const repeatTextEl = document.querySelector('#repeat-text')
+
+    axios
+    .get(baseURL + '/repeat/repeat-text')
+    .then(res => {
+        repeatTextEl.textContent = res.data
+        repeatTextEl.style.display = 'block'
+    })
+    .catch(err => console.log(err)) 
 }
+
+repeatBtn.addEventListener('click', repeatMyParam);
 
 // PROBLEM 7
 /*
@@ -113,8 +157,26 @@ const repeatMyParam = () => {
 */
 
 // CODE HERE
+const queryBtn = document.querySelector('#query-button')
 
+// const queryObj = {
+//     rain: 'chance-of-rain',
+//     dinner: 'whats-for-dinner'
+// }
+//Object.entries(queryObj): [['query', 'chance-of-rain'], ['rache', 'woman']];
 
+const sendAQuery = () => {
+
+    axios
+    .get(baseURL + '/query-test/?rain=chance-of-rain-today&dinner=whats-for-dinner')
+    .then(res => {
+        console.log(res.data)
+    })
+    .catch(err => console.log(err));
+
+}
+
+queryBtn.addEventListener('click', sendAQuery)
 
 ////////////////
 //INTERMEDIATE//
@@ -129,6 +191,27 @@ const repeatMyParam = () => {
 
 // Code in the ohMy function in Problem 5
 
+const animalsBtn = document.querySelector('#animals-button')
+
+const ohMy = () => {
+    
+   
+    axios
+    .get(baseURL + '/animals')
+    .then(res => {
+        for(i = 0; i < res.data.length; i++){
+            let animalEl = document.createElement('p')
+            animalEl.textContent =  res.data[i]
+            document.body.appendChild(animalEl)
+        }
+    })
+    .catch(err => console.log(err));
+}
+
+ohMy();
+animalsBtn.addEventListener('click', ohMy)
+//document.getElementById('animals-button').addEventListener('click', ohMy)
+
 // PROBLEM 10 
 /*
     In the function that you wrote for Problem 8, change the URL to test a couple different scenarios. 
@@ -140,7 +223,8 @@ const repeatMyParam = () => {
 
 // Edit code in Problem 8
 
-
+// No queries console logs = 'You sent an empty query!'
+// More than one query console.logs = 'You sent more than 1 query!'
 
 ////////////
 //ADVANCED//
@@ -166,3 +250,20 @@ const repeatMyParam = () => {
 */
 
 // CODE HERE 
+function createFood(e) {
+    e.preventDefault();
+    let foodInput = document.getElementById('food-input')
+    const body = { 
+        newFood: foodInput.value
+    }
+
+    axios
+        .post(baseURL + '/food', body)
+        .then(res => {
+            console.log('data', res.data)
+        })
+        .catch(err => console.log(err));
+}
+
+const addFoodForm = document.getElementById('add-food-form')
+addFoodForm.addEventListener('submit', createFood)
