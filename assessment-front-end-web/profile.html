@@ -1,6 +1,60 @@
-Not implemented yet! 
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Homepage</title>
+	<link href="styles.css" rel="stylesheet">
+
+</head>
+<body>
+	<nav>
+		<ol>
+	        <li class="crumb"><a href="./home.html">Home</a></li>
+	        <li class="crumb"><a href="./profile.html">Profile</a></li>
+	        <li class="crumb"><a href="./about.html">About</a></li>
+            <li class="crumb"><a href="./miami.html">Miami</a></li>
+	    </ol>
+	</nav>
+
+	<content>
+		<h1>Profile</h1>
+		<p>A little about Rachel Spencer.</p>
+
+		<img id='cairns-map' src="/Users/rachelspencer/Documents/Dev-Mountain/Exercises/week5/assessment-front-end-web/cairns_qld_aus.png">
+
+		<p>Born in Cairns, Queensland Australia, where the 'rainforest meets the reef'. Much of my childhood was spent outdoors exploring The Great Barrier Reef and The Daintree Rainforest.</p>
+        <img id='cairns-map' src="/Users/rachelspencer/Documents/Dev-Mountain/Exercises/week5/assessment-front-end-web/green_island_cairns.png">
+        <img id='cairns-map' src="/Users/rachelspencer/Documents/Dev-Mountain/Exercises/week5/assessment-front-end-web/daintree.png">
+		
+        <form id='journey'>
+            <h3>Select and submit a drop down option to read more about the journey that led me to Miami USA.</h3>
+            <label>Make a selection</label>
+            <br>
+            <select id="journey_info" name="journey_info">
+                <option value="cairns">Leaving Cairns</option>
+                <option value="leaving-aus">Leaving Australia</option>
+                <option value="usa">Life in USA</option>
+            </select>
+            <input type="submit">
+        </form>
+        <h3>Fun Facts:</h3>
+		<ul>
+			<li>Can embroider</li>
+			<li>Took piano lessons for 22 years, and play very badly now</li>
+			<li>Love potatoes</li>
+		</ul>
+        <h3>Current goal</h3>
+        <p>My current goal is to obtain a role in the tech industry. I hope that eventually I can find a position that will allow me to visit my home town and family whilst working remotely. </p>
+        <button class='button' id="color">My Favorite Color</button>
+        <button class='button' id="place">My Favorite Place</button>
+        <button class='button' id="ritual">My Favorite Ritual</button>
+    </content>
+
+    <script src="profile.js"></script>
+
+</body>
+</html>
 
 <br>
 <br>
 
-<a href="./home.html"><< Back </a>
+<a href="./home.html">< Back </a>

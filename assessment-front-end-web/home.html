@@ -11,25 +11,45 @@
 	        <li class="crumb"><a href="./home.html">Home</a></li>
 	        <li class="crumb"><a href="./profile.html">Profile</a></li>
 	        <li class="crumb"><a href="./about.html">About</a></li>
+			<li class="crumb"><a href="./miami.html">Miami</a></li>
 	    </ol>
 	</nav>
 
 	<content>
 		<h1>Welcome to this little website.</h1>
-		<!-- insert hello world here -->
+		<p>Hello World, says Misty as she wakes up from her nap.</p>
 
-		<img src="https://devmountain.com/wp-content/uploads/2020/10/devmountain-logo3.png">
+		<img id='cat-image' src="/Users/rachelspencer/Documents/Dev-Mountain/Exercises/week5/assessment-front-end-web/misty_cat.png">
+
+		<p>We welcome you with open arms and clipped kitty claws.</p>
+
+		<p>Misty would like to greet you with some compliments:</p>
+		<ul>
+			<li>Wow, you almost look as well groomed as me!</li>
+			<li>Gosh, you also look as well rested too!</li>
+			<li>You look well fed also (this is a compliment in cat standards).</li>
+		</ul>
 
 		<h2>Contact Us</h2>
 		<form id="contact">
-			Your name:
+			<p>Your name:</p>
 			<input type="text">
 
-			Message:
+			<p>Message:</p>
 			<input type="textarea">
 
-			<input type="submit">
+			<p>How did you hear about us?</p>
+			<input type="radio" id="google" name="response" value="Google">
+			<label for="google">Google</label> 
+			<br>
+			<input type="radio" id="a-friend" name="response" value="A friend">
+			<label for="a-friend">A Friend</label> 
+			<br>
+			<input type="radio" id="other" name="response" value="Other">
+			<label for="other">Other</label>
 
+			<input type="submit">
+ 
 
 		</form>
 
